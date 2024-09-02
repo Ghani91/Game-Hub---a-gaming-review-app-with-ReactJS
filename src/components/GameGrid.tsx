@@ -24,9 +24,11 @@ const GameGrid = () => {
     <>
       {errors && <Text>{errors}</Text>}
       <Text>My Games</Text>
-      {games.map((game) => (
-        <Text>{game.name}</Text>
-      ))}
+      <ul>
+        {games.map((game) => (
+          <li key={game.id}>{game.name}</li>
+        ))}
+      </ul>
     </>
   );
 };
