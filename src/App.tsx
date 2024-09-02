@@ -1,8 +1,7 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import "./App.css";
 
 function App() {
-  return <ChakraProvider></ChakraProvider>;
+  return <h1>Welcome to Game Hub - a wholecome approach for gaming world</h1>;
 }
 
 export default App;
