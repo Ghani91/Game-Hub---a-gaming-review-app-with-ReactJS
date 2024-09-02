@@ -1,6 +1,6 @@
 import { Grid, GridItem, Heading, Show } from "@chakra-ui/react";
 import "./App.css";
-
+import SearchBar from "./components/searchBar";
 function App() {
   return (
     <>
@@ -10,8 +10,8 @@ function App() {
           lg: `"nav nav" "aside main"`,
         }}
       >
-        <GridItem area="nav" bg="dodgerblue">
-          Nav
+        <GridItem area="nav">
+          <SearchBar />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" bg="gold">
