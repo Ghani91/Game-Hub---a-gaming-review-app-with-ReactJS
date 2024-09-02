@@ -1,20 +1,27 @@
-import { Heading } from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Show } from "@chakra-ui/react";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Heading
-        as="h1"
-        color="green"
-        textAlign="center"
-        p="20px"
-        border="1px solid grey"
-        borderRadius="10px"
-        m="10px"
+      <Grid
+        templateAreas={{
+          base: `"nav" "main"`,
+          lg: `"nav nav" "aside main"`,
+        }}
       >
-        Welcome to Gaming Hub - a true friend of gamers!!!
-      </Heading>
+        <GridItem area="nav" bg="dodgerblue">
+          Nav
+        </GridItem>
+        <Show above="lg">
+          <GridItem area="aside" bg="gold">
+            Aside
+          </GridItem>
+        </Show>
+        <GridItem area="main" bg="green">
+          Main
+        </GridItem>
+      </Grid>
     </>
   );
 }
