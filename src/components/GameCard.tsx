@@ -2,13 +2,14 @@ import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import { Game } from "../services/useGames";
 import PlatformIconList from "./PlatformIconList";
 import ScoreCard from "./CriticScore";
+import imageUrl from "../services/image-url";
 interface Props {
   game: Game;
 }
 const GameCard = ({ game }: Props) => {
   return (
     <Card border={10} overflow={"hidden"}>
-      <Image src={game.background_image} width={"auto"} />
+      <Image src={imageUrl(game.background_image)} width={"auto"} />
       <CardBody>
         <Heading fontSize="2xl" textAlign={"center"} color={"gray"}>
           {game.name}
