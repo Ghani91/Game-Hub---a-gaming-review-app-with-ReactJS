@@ -18,7 +18,6 @@ interface Props {
 }
 
 const PlatformIconList = ({ platforms }: Props) => {
-  platforms.forEach((p) => console.log(p.slug));
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
     playstation5: FaPlaystation,
@@ -42,7 +41,12 @@ const PlatformIconList = ({ platforms }: Props) => {
       justifyContent={"center"}
     >
       {platforms.map((platform) => (
-        <Icon as={iconMap[platform.slug]} boxSize={8} color="gray.500" />
+        <Icon
+          as={iconMap[platform.slug]}
+          boxSize={8}
+          color="gray.500"
+          key={platform.id}
+        />
       ))}
     </HStack>
   );

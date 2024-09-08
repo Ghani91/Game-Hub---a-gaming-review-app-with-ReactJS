@@ -27,6 +27,7 @@ const useGenre = () => {
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true);
     apiClient
       .get<FetchGenres>("/genres", { signal: controller.signal })
       .then((res) => {
@@ -38,7 +39,7 @@ const useGenre = () => {
         setLoading(false);
         setErrors(err.message);
       });
-  }, [genre]);
+  }, []);
 
   return { genre, errors, isLoading };
 };
