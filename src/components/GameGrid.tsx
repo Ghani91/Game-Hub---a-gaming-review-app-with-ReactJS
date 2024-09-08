@@ -13,7 +13,7 @@ const GameGrid = () => {
       <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} padding={5}>
         {isLoading &&
           figure.map((fig) => (
-            <GameCardContainer>
+            <GameCardContainer key={fig}>
               <CardSkeleton key={fig} />
             </GameCardContainer>
           ))}
