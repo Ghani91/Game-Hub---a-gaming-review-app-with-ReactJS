@@ -3,8 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
-import GenreSkeleton from "./components/GenreSkeleton";
-import CardSkeleton from "./components/CardSkeleton";
+
 function App() {
   return (
     <>

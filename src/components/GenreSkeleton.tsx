@@ -1,13 +1,4 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  HStack,
-  Skeleton,
-  SkeletonCircle,
-  SkeletonText,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 
 const GenreSkeleton = () => {
   return (
