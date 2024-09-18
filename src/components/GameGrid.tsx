@@ -13,7 +13,7 @@ const GameGrid = () => {
       <Heading as={"h2"} textAlign={"center"} color={"gray.400"}>
         Games
       </Heading>
-      <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} padding={5}>
+      <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} padding={2} spacing={2}>
         {isLoading &&
           figure.map((fig) => (
             <GameCardContainer key={fig}>
