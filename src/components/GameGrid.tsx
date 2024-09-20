@@ -3,8 +3,12 @@ import useGames from "../services/useGames";
 import GameCard from "./GameCard";
 import CardSkeleton from "./CardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-const GameGrid = () => {
-  const { data, errors, isLoading } = useGames();
+import { Genre } from "../hooks/useGenre";
+interface Props {
+  selectedGenre: Genre | null;
+}
+const GameGrid = ({ selectedGenre }: Props) => {
+  const { data, errors, isLoading } = useGames(selectedGenre);
   const figure = [1, 2, 3, 4, 5, 6];
   console.log(isLoading);
   return (
