@@ -1,9 +1,12 @@
-import useGenre from "../hooks/useGenre";
+import useGenre, { Genre } from "../hooks/useGenre";
 import { Heading, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import GenreListItem from "./GenreListItem";
 import GenreSkeleton from "./GenreSkeleton";
 
-const GenreList = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+const GenreList = ({ onSelectGenre }: Props) => {
   const { data, errors, isLoading } = useGenre();
   const genreList = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
@@ -16,7 +19,7 @@ const GenreList = () => {
       <UnorderedList styleType={"none"}>
         {data.map((gen) => (
           <ListItem key={gen.id}>
-            <GenreListItem genre={gen} />
+            <GenreListItem genre={gen} setGenre={onSelectGenre} />
           </ListItem>
         ))}
       </UnorderedList>

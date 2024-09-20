@@ -1,9 +1,10 @@
-import { Avatar, HStack, Text } from "@chakra-ui/react";
+import { Avatar, Button, HStack } from "@chakra-ui/react";
 import { Genre } from "../hooks/useGenre";
 interface Props {
   genre: Genre;
+  setGenre: (genre: Genre) => void;
 }
-const GenreListItem = ({ genre }: Props) => {
+const GenreListItem = ({ genre, setGenre }: Props) => {
   return (
     <HStack
       overflow={"none"}
@@ -17,7 +18,9 @@ const GenreListItem = ({ genre }: Props) => {
       _hover={{ bg: "blue.500", color: " white" }}
     >
       <Avatar src={genre.image_background} marginRight={1} />
-      <Text fontSize={"2xl"}>{genre.name}</Text>
+      <Button fontSize={"2xl"} variant={"link"} onClick={() => setGenre(genre)}>
+        {genre.name}
+      </Button>
     </HStack>
   );
 };
