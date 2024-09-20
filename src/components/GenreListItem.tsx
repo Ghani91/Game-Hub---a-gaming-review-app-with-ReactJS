@@ -3,8 +3,9 @@ import { Genre } from "../hooks/useGenre";
 interface Props {
   genre: Genre;
   setGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
-const GenreListItem = ({ genre, setGenre }: Props) => {
+const GenreListItem = ({ genre, selectedGenre, setGenre }: Props) => {
   return (
     <HStack
       overflow={"none"}
@@ -18,7 +19,12 @@ const GenreListItem = ({ genre, setGenre }: Props) => {
       _hover={{ bg: "blue.500", color: " white" }}
     >
       <Avatar src={genre.image_background} marginRight={1} />
-      <Button fontSize={"2xl"} variant={"link"} onClick={() => setGenre(genre)}>
+      <Button
+        fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+        fontSize={"2xl"}
+        variant={"link"}
+        onClick={() => setGenre(genre)}
+      >
         {genre.name}
       </Button>
     </HStack>

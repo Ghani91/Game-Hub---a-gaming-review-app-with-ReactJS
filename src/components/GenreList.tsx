@@ -5,8 +5,9 @@ import GenreSkeleton from "./GenreSkeleton";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, errors, isLoading } = useGenre();
   const genreList = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
@@ -19,7 +20,11 @@ const GenreList = ({ onSelectGenre }: Props) => {
       <UnorderedList styleType={"none"}>
         {data.map((gen) => (
           <ListItem key={gen.id}>
-            <GenreListItem genre={gen} setGenre={onSelectGenre} />
+            <GenreListItem
+              selectedGenre={selectedGenre}
+              genre={gen}
+              setGenre={onSelectGenre}
+            />
           </ListItem>
         ))}
       </UnorderedList>
