@@ -11,11 +11,16 @@ const GameCard = ({ game }: Props) => {
     <Card>
       <Image src={imageUrl(game.background_image)} width={"auto"} />
       <CardBody>
-        <Heading fontSize="2xl" textAlign={"center"} color={"gray"}>
+        <Heading
+          fontSize="2xl"
+          textAlign={"center"}
+          color={"gray"}
+          whiteSpace={"nowrap"}
+        >
           {game.name}
         </Heading>
 
-        <HStack justifyContent={"space-between"} paddingX={5}>
+        <HStack justifyContent={"space-between"} paddingX={5} flexWrap={"wrap"}>
           <PlatformIconList platforms={game.platforms.map((p) => p.platform)} />
           <ScoreCard metaCritic={game.metacritic} />
         </HStack>
