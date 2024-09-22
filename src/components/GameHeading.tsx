@@ -1,28 +1,17 @@
-import { Heading, HStack } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { GameQuerry } from "../App";
 
 interface Props {
   gameQuerry: GameQuerry;
 }
 const GameHeading = ({ gameQuerry }: Props) => {
+  const heading = `${gameQuerry.platform?.name || ""} ${
+    gameQuerry.genre?.name || ""
+  } Games`;
   return (
-    <HStack
-      marginBottom={4}
-      textAlign={"center"}
-      display={"flex"}
-      justifyContent={"center"}
-    >
-      <Heading size="lg" fontSize="50px" as={"h2"}>
-        {" "}
-        {gameQuerry.platform?.name}
-      </Heading>
-      <Heading size="lg" fontSize="50px" as={"h2"}>
-        {gameQuerry.genre?.name}{" "}
-      </Heading>
-      <Heading size="lg" fontSize="50px" as={"h2"}>
-        Games
-      </Heading>
-    </HStack>
+    <Heading size="lg" fontSize="50px" as={"h1"} textAlign={"center"}>
+      {heading}
+    </Heading>
   );
 };
 
