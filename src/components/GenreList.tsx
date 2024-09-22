@@ -12,7 +12,13 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const genreList = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <>
-      <Heading as={"h2"} textAlign={"center"} color={"gray.400"}>
+      <Heading
+        as={"h2"}
+        textAlign={"center"}
+        color={"gray.400"}
+        fontSize={"2xl"}
+        marginBottom={3}
+      >
         Genres
       </Heading>
       {errors && <Text>{errors}</Text>}

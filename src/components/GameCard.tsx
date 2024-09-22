@@ -15,12 +15,16 @@ const GameCard = ({ game }: Props) => {
           fontSize="2xl"
           textAlign={"center"}
           color={"gray"}
-          whiteSpace={"nowrap"}
+          whiteSpace={"normal"}
         >
           {game.name}
         </Heading>
 
-        <HStack justifyContent={"space-between"} paddingX={5} flexWrap={"wrap"}>
+        <HStack
+          justifyContent={"space-between"}
+          paddingX={5}
+          flexWrap={"nowrap"}
+        >
           <PlatformIconList platforms={game.platforms.map((p) => p.platform)} />
           <ScoreCard metaCritic={game.metacritic} />
         </HStack>

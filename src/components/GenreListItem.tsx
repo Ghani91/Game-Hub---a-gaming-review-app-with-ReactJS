@@ -18,11 +18,17 @@ const GenreListItem = ({ genre, selectedGenre, setGenre }: Props) => {
       borderRadius={4}
       _hover={{ bg: "blue.500", color: " white" }}
     >
-      <Avatar src={genre.image_background} marginRight={1} />
+      <Avatar
+        src={genre.image_background}
+        marginRight={1}
+        objectFit={"cover"}
+      />
       <Button
         fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+        whiteSpace={"normal"}
         fontSize={"2xl"}
         variant={"link"}
+        textAlign={"left"}
         onClick={() => setGenre(genre)}
       >
         {genre.name}
